@@ -2,17 +2,17 @@
 
 $(document).ready(function() { 
 
-  var dateOptions={};
+  
+  var dateChoices={};
+
   flatpickr(".flatpickr", {
     enableTime: true,
     dateFormat: "F, d Y H:i",
-    onClose: function(selectedDates, dateStr, instance) {
+    onClose: function(selectedDates) {
       var id = ($(this.element).attr('id'));
-      dateOptions[id]=(selectedDates[0]);
-      console.log(dateOptions);
-      Object.values(dateOptions);
-
+      dateChoices[id]=(selectedDates[0]);
+      Object.values(dateChoices);
+      console.log(dateChoices);
     },
   });
-  console.log(dateOptions);
 });
