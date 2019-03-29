@@ -1,13 +1,18 @@
 
 
-
 $(document).ready(function() { 
-  var chosenDate = [];
-  const fp = flatpickr("#flatpickr", {
+
+  var dateOptions={};
+  flatpickr(".flatpickr", {
     enableTime: true,
     dateFormat: "F, d Y H:i",
-      onChange: function(selectedDates, dateStr, instance) {
-        console.log(selectedDates)
-      }
+    onClose: function(selectedDates, dateStr, instance) {
+      var id = ($(this.element).attr('id'));
+      dateOptions[id]=(selectedDates[0]);
+      console.log(dateOptions);
+      Object.values(dateOptions);
+
+    },
   });
+  console.log(dateOptions);
 });
