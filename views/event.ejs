@@ -3,13 +3,15 @@
   <head>
     <title>Create an Event</title>
 
+    <!-- css styles -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     
-      <!--  Flatpicker Styles  -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/themes/dark.css">
+  
   </head>
 
   <body>
@@ -23,14 +25,16 @@
       <input class="host_note" placeholder="any notes for your guests?"></input>
     </form>
     <br>
-    <h2 class ="calendar_header">Select Date and Time</h2>
-    
-    <input type="text" id="basicDate" 
-    placeholder="Please select Date and Time" data-input="" 
-    class="flatpickr-input active" readonly="readonly"></input>
 
-    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/calendar.js"></script>
-  </body>
+  <p>Date: <input type="text" id="flatpickr" placeholder="Make your first choice" ></p>
+  <p>Date: <input type="text" id="flatpickr" placeholder="Make your second choice" ></p>
+  <p>Date: <input type="text" id="flatpickr" placeholder="Make your third choice" ></p>
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/calendar.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  
+
+
+</body>
 </html>
