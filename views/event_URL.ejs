@@ -1,7 +1,9 @@
+<% include partials/_header %>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Results</title>
+    <title>Schoodle</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -14,6 +16,9 @@
   <body>
     <h1>You've been invited to Event Name</h1>
     <h3>What works best for you?</h3>
-    <a href="/events/:uniqueURL/guests_confirmation" class="btn btn-primary"><i class="fas fa-edit"></i>Submit</a>
+    <a href="/events/<%= eventID %>/guest_confirmation" class="btn btn-primary"><i class="fas fa-edit"></i>Submit</a>
   </body>
 </html>
+
+<% include partials/_footer %>
+
