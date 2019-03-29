@@ -12,7 +12,16 @@ $(document).ready(function() {
       var id = ($(this.element).attr('id'));
       dateChoices[id]=(selectedDates[0]);
       Object.values(dateChoices);
-      console.log(dateChoices);
-    },
+
+      
+      $("#createEvent").click(function() {
+        $.post("/:event_id/guest_confirmation", {dateChoices}, 
+        function(data, status)
+        { 
+          
+        }
+        ajax.post
+      });
+    }   
   });
 });

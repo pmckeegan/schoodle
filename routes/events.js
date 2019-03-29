@@ -1,6 +1,7 @@
 "use strict";
 
 const express = require('express');
+
 const router  = express.Router();
 
 module.exports = (knex) => {
@@ -18,6 +19,10 @@ module.exports = (knex) => {
   // Generate unique event ID
   var eventID = generateRandomString();
   var templateVars = { eventID };
+
+  router.post("/test", (req, res) => {
+    res.render("event");
+  });
 
   // GET create event page
   router.get("/", (req, res) => {
@@ -49,6 +54,12 @@ module.exports = (knex) => {
     res.render("guests_confirmation", templateVars);
   });
 
+   // POST guest confirmation page receives date info
+   router.post("/:event_id/guest_confirmation", (req, res) => {
+    res.redirect(`/${eventID}/guests_confirmation`)
+  });
+
+
   // GET event modify page
   router.get("/:event_id/guest_confirmation/modify", (req, res) => {
     res.render("event_modify", templateVars);
@@ -64,7 +75,9 @@ module.exports = (knex) => {
     res.render("event_results");
   });
 
-  // Return router
+
+
+
   return router;
 
 }

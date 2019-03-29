@@ -35,6 +35,10 @@ app.use("/styles", sass({
 }));
 app.use(express.static("public"));
 
+app.get("/test", (req, res) => {
+  res.render("event");
+});
+
 // Mount all resource routes
 app.use("/events", eventsRoutes(knex));
 
@@ -42,6 +46,8 @@ app.use("/events", eventsRoutes(knex));
 app.get("/", (req, res) => {
   res.render("index");
 });
+
+
 
 // Boot server
 app.listen(PORT, () => {
