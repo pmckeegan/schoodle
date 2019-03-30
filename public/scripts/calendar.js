@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   var dateChoices={};
 
-  flatpickr("#flatpickr", {
+  flatpickr(".flatpickr", {
     enableTime: true,
     dateFormat: "F, d Y H:i",
     onClose: function(selectedDates) {
@@ -15,12 +15,11 @@ $(document).ready(function() {
       dateChoices[id]=(selectedDates[0]);
       Object.values(dateChoices);
 
-      console.log(dateChoices.flatpickr1);
-      console.log(dateChoices.flatpickr2);
-      console.log(dateChoices.flatpickr3);
+      console.log(dateChoices);
+      // console.log(dateChoices.flatpickr2);
+      // console.log(dateChoices.flatpickr3);
 
       $("#createEvent").click(function() {
-
       });
     }
   });
